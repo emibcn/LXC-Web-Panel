@@ -110,7 +110,7 @@ def info(container):
     output = _run('lxc-info -qn {}'.format(container), output=True).splitlines()
     
     # on lxc 1.0 lxc-info output has been shifted
-    state = output[1].split()[1]
+    state = output[0].split()[1]
 
     if state == 'STOPPED':
         pid = "0"
